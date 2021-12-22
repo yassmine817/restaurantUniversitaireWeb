@@ -1,0 +1,61 @@
+
+<div class="content-body">
+
+    <div class="container-fluid">
+  <div class="col-lg-12">
+  
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title"> students waiting list </h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-responsive-md"  >
+                    <thead>
+                        <tr>
+                            <th>FullName</th>
+                            <th>username</th>
+                            <th>Email</th>
+                            <th>Register number</th>
+                            <th>Identity number</th>
+  
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let stud of StudentService.User">
+  
+                              <td><div class="d-flex align-items-center"><img src="../../assets/images/avatar/2.jpg" class="rounded-lg mr-2" width="24" alt=""/> <span class="w-space-no">{{stud.fullname}}</span></div></td>
+  
+                            <td><strong>{{stud.username}}</strong></td>
+  
+                            <td>{{stud.email}}</td>
+                            <td>01 August 2020</td>
+                            <td> {{stud.cin}}</td>
+                            <td><div class="d-flex align-items-center"><i class="fa fa-circle text-success mr-1"></i> {{stud.statut}}</div></td>            <td>
+                                <div class="dropdown">
+                                    <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#3E4954" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#3E4954" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#3E4954" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="javascript:void(0);"><i class="las la-check-circle text-success mr-3 scale5" (click)="onEdit(stud._id)"></i>Accept Order</a>
+                                        <a href="javascript:void(0);" data-dismiss="alert" aria-label="Close" class="dropdown-item" (click)="onDelete(stud._id)"><i class="las la-times-circle text-danger mr-3 scale5"></i>Reject Order</a>
+                                    </div>
+                                </div>
+                            </td>
+                                                </tr>
+  
+                    </tbody>
+                </table>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+   <!-- Large modal -->

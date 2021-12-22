@@ -1,0 +1,71 @@
+<div class="deznav">
+  <div class="deznav-scroll" >
+<ul class="metismenu" id="menu" >
+          <li *ngIf="showAdminBoard"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+    <i class="flaticon-381-networking"></i>
+    <span class="nav-text">Dashboard</span>
+  </a>
+              <ul aria-expanded="false">
+    <li><a routerLink="user">Dashboard</a></li>
+
+
+  </ul>
+          </li>
+
+
+          <li *ngIf="showAdminBoard"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+    <i class="flaticon-381-controls-3"></i>
+    <span class="nav-text">List of Students</span>
+  </a>
+              <ul aria-expanded="false">
+                  <li><a  routerLink="acceptedstudents">Students accepted </a></li>
+                  <li><a routerLink="notstudents">Students not accepted </a></li>
+
+              </ul>
+          </li>
+          <li *ngIf="showAdminBoard"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+    <i class="flaticon-381-internet"></i>
+    <span class="nav-text">List of chefs</span>
+  </a>
+    <ul aria-expanded="false">
+      <li><a routerLink="listchef">chefs</a></li>
+
+    </ul>
+
+          </li>
+          <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+    <i class="flaticon-381-heart"></i>
+    <span class="nav-text">Profile</span>
+  </a>
+              <ul aria-expanded="false">
+                  <li><a routerLink="profile">Profile</a></li>
+
+              </ul>
+          </li>
+
+          <li *ngIf="showstudent"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-381-heart"></i>
+            <span class="nav-text">List of Menus</span>
+          </a>
+
+                  </li>
+                  <li *ngIf="showModeratorBoard"><a class="has-arrow ai-icon" routerLink="/Menu" aria-expanded="false">
+                    <i class="flaticon-381-controls-3">
+                    </i>
+                    <span class="nav-text">Menu management</span>
+                  </a>
+        
+                          </li>
+
+                  <li *ngIf="showstudent"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-heart"></i>
+                    <span class="nav-text">My Tickets</span>
+                  </a>
+
+                          </li>
+
+
+      </ul>
+
+</div>
+</div>

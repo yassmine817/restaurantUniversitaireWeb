@@ -1,0 +1,8 @@
+
+
+<app-navbar *ngIf="!(router.url === '/register' || router.url === '/login')" ></app-navbar>
+<app-sidebar *ngIf="!(router.url === '/register' || router.url === '/login')"></app-sidebar>
+<body><router-outlet></router-outlet></body>
+
+
+<app-footer *ngIf="!(router.url === '/register' || router.url === '/login')"></app-footer>

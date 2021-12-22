@@ -1,0 +1,89 @@
+
+<div class="content-body">
+    <div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Add new menu</h4>
+            </div>
+            <div class="card-body">
+                <div class="form-validation">
+                    <form class="form-valide" #menuForm="ngForm" (ngSubmit)="onSubmit(menuForm)">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="form-group" >
+                                    <label class="text-black font-w500">Meal1</label>
+                                    <input type="text" class="form-control" name="meal1" [(ngModel)]="form.meal1"
+                                    required
+                                    minlength="3"
+                                    maxlength="20"
+                                    #meal1="ngModel">
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-black font-w500">Meal2</label>
+                                    <input type="text" class="form-control" name="meal2" [(ngModel)]="form.meal2"
+                                    required
+                                    minlength="3"
+                                    maxlength="20"
+                                    #meal2="ngModel">
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-black font-w500">Meal3</label>
+                                    <input type="text" class="form-control" name="meal3" [(ngModel)]="form.meal3"
+                                    required
+                                    minlength="3"
+                                    maxlength="20"
+                                    #meal3="ngModel">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="text-black font-w500">Meal4</label>
+                                    <input type="text" class="form-control" name="meal4" [(ngModel)]="form.meal4"
+                                    required
+                                    minlength="3"
+                                    maxlength="20"
+                                    #meal4="ngModel">
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-black font-w500">Date</label>
+                                    <input type="text" class="form-control" name="dateM" [(ngModel)]="form.dateM"
+                                    required
+                                    minlength="3"
+                                    maxlength="20"
+                                    #dateM="ngModel">
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-black font-w500">Type</label>
+                                    <input type="text" class="form-control" name="type" [(ngModel)]="form.type"
+                                    required
+                                    minlength="3"
+                                    maxlength="20"
+                                    #type="ngModel">
+                                </div>
+                                <div class="form-group row">
+                                  
+                                  <div class="col-lg-6" style="margin-left: 50%;">
+                                      <button type="submit" class="btn btn-primary" [disabled]="!menuForm.valid">Submit</button>
+                                  </div>
+  
+                                  
+                              </div>
+  
+                            </div>
+                           
+                                </div>
+          
+      
+                              
+  
+  
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  </div>
+  

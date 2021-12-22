@@ -1,0 +1,114 @@
+
+<div class="content-body">
+    <button type="button"  class="btn btn-primary light d-flex align-items-center svg-btn" aria-expanded="false" style="margin-left:80%;
+    margin-top: 15px;">
+        <span class="fs-16 ml-3" ><a routerLink="addstudent" >Add new </a></span>
+      </button>
+  <div class="container-fluid">
+    
+<div class="col-lg-12">
+
+  <div class="card">
+      <div class="card-header">
+          <h4 class="card-title">Students List</h4>
+      </div>
+      <div class="card-body">
+          <div class="table-responsive">
+              <table class="table table-responsive-md"  >
+                  <thead>
+                      <tr>
+                          <th>FullName</th>
+                          <th>username</th>
+                          <th>Email</th>
+                          <th>Register number</th>
+                          <th>Identity number</th>
+
+                          <th>Status</th>
+                          <th>Action</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let stud of StudentService.User">
+
+                            <td><div class="d-flex align-items-center"><img src="../../assets/images/avatar/2.jpg" class="rounded-lg mr-2" width="24" alt=""/> <span class="w-space-no">{{stud.fullname}}</span></div></td>
+
+                          <td><strong>{{stud.username}}</strong></td>
+
+                          <td>{{stud.email}}</td>
+                          <td>01 August 2020</td>
+                          <td> {{stud.cin}}</td>
+                          <td><div class="d-flex align-items-center"><i class="fa fa-circle text-success mr-1"></i> {{stud.statut}}</div></td>            <td>
+                            <div class="d-flex">
+                              <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"  data-toggle="modal"  (click)="getOne(stud._id)" data-target=".bd-example-modal-lg"><i class="fa fa-pencil"></i></a>
+                              <a href="#" class="btn btn-danger shadow btn-xs sharp" (click)="onDelete(stud._id)"><i class="fa fa-trash"></i></a>
+                            </div>
+                          </td>
+                                              </tr>
+
+                  </tbody>
+              </table>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              </div>
+              </div>
+ <!-- Large modal -->
+
+ <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+     <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h5 class="modal-title">Update student</h5>
+                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                 </button>
+             </div>
+             <div class="card-body">
+             <div class="form-validation">
+              <form class="form-valide" #studentForm="ngForm" (ngSubmit)="onEdit(studentForm.value)">
+                  <div class="row">
+                      <div class="col-xl-6">
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-username" >Username
+                                  <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-6">
+                                  <input type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="StudentService.selectedStudent.username" required
+                                  minlength="3"
+                                  maxlength="20"
+                                   placeholder="Enter a username..">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-email">Email <span
+                                      class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-6">
+                                  <input type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]="StudentService.selectedStudent.email" required
+                                  email
+                                 placeholder="Your valid email..">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-password">Password
+                                  <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-6">
+                                  <input type="password" class="form-control" id="val-password" name="password" #password="ngModel" [(ngModel)]="StudentService.selectedStudent.password" required
+
+                                   password
+                                  minlength="6"
+                                 placeholder="Choose a safe one..">
+                              </div>
+
+                          </div>
+
+                        </div>
+                      </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
+                 <button type="submit" class="btn btn-primary"[disabled]="!studentForm.valid">Submit</button>
+             </div>
+            </form>
+</div>
+</div>

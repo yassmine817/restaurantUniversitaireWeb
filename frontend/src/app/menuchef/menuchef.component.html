@@ -1,0 +1,61 @@
+
+<div class="content-body">
+    
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Menus List</h4>
+                <button type="button"  class="btn btn-primary light d-flex align-items-center svg-btn" aria-expanded="false" style="margin-left:80%;
+                  margin-top: 15px;">
+        <span class="fs-16 ml-3" ><a routerLink="addmenu" >Add new </a></span>
+      </button>
+
+            </div>
+  <div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-responsive-md"  >
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            
+                            
+                            <th>Meal1</th>
+                            <th>Meal2</th>
+                            <th>Meal3</th>
+
+                            <th>Meal4</th>
+                            <th>type</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let stud of  menuservice.menu">
+  
+                              
+                            <td><div class="d-flex align-items-center"><i class="fa fa-circle text-success mr-1"></i> {{stud.dateM}}</div></td>
+                            <td><strong>{{stud.meal1}}</strong></td>
+  
+                            <td>{{stud.meal2}}</td>
+                            <td>{{stud.meal3}}</td>
+                            <td> {{stud.meal4}}</td>
+                            <td> {{stud.type}}</td>
+
+                                        <td>
+                                <div class="d-flex">
+                                    <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"  data-toggle="modal"  (click)="getOne(stud._id)" data-target=".bd-example-modal-lg"><i class="fa fa-pencil"></i></a>
+                                    <a href="#" class="btn btn-danger shadow btn-xs sharp" (click)="onDelete(stud._id)"><i class="fa fa-trash"></i></a>
+                                  </div>
+                            </td>
+                                                </tr>
+  
+                    </tbody>
+                </table>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+              
